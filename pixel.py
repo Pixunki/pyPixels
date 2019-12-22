@@ -18,7 +18,8 @@ class Field:
         self.neofield = neopixel.NeoPixel(
                             GPIO_PIN,
                             boards*size_board_x*size_board_y,
-                            pixel_order=COLOR_SETTING
+                            pixel_order = COLOR_SETTING,
+                            brightness = 0.02
                         )
         for board_n in range(boards):
             new_board = Board(
