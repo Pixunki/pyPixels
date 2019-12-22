@@ -90,7 +90,7 @@ class Pixel:
         self.attached_field = attached_field
 
     def paint(self, color=COLORS["WHITE"]):
-        self.attached_field[self.idx] = color
+        self.attached_field[self.index] = color
         self.attached_field.show()
 
 
