@@ -19,7 +19,7 @@ class Field:
                             GPIO_PIN,
                             boards*size_board_x*size_board_y,
                             pixel_order = COLOR_SETTING,
-                            brightness = 0.02
+                            brightness = 0.04
                         )
         for board_n in range(boards):
             new_board = Board(
