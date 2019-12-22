@@ -36,10 +36,8 @@ function clickListener(){
 	index_x = floor((mouseX-b*border_size)/tile_size);
     while (index_x >= board_cols) {
         b++;
-        console.log(b, mouseX, index_x)
         index_x = floor((mouseX-b*border_size)/tile_size) - b*board_cols;
     }
-    console.log("yep", b, mouseX, index_x)
 	index_y = floor(mouseY/tile_size);
 
 	map[b][index_x][index_y].newColor(orange);
