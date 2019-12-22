@@ -69,7 +69,7 @@ class Row:
         self.attached_field = attached_field
         for pixel in range(size_x):
             new_pixel = Pixel(
-                            index = start_index + pixel,
+                            idx = start_index + pixel,
                             attached_field = self.attached_field
                         )
             self.pixels.append(new_pixel)
