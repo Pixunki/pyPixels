@@ -25,7 +25,7 @@ class Field:
                             size_board_x,
                             size_board_y,
                             attached_field = self,
-                            start_index = boards_n*size_board_x*size_board_y
+                            start_index = board_n*size_board_x*size_board_y
                         )
             self.boards.append(new_board)
     def __iter__(self, idx):
