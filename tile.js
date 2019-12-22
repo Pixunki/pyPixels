@@ -37,5 +37,6 @@ class Tile {
 
 	mouseClicked(){
 		this.newColor(orange);
+		console.log("http://pixel.rogerio.no/pypixels/GET?board="+this.b+"&row="+this.coords[1]+"&col="+this.coords[0]+"&0xFFFF00");
 	}
 }
