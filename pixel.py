@@ -67,6 +67,8 @@ class Board:
             for row in board:
                 for pixel in row:
                     pixel.paint(color)
+    def show(self):
+        self.attached_field.show()
 
 class Row:
     def __init__(self, size_x, start_index, attached_field):
@@ -87,6 +89,8 @@ class Row:
     def paint(self, color=COLORS["WHITE"]):
         for pixel in self.pixels:
             pixel.paint(color)
+    def show(self):
+        self.attached_field.show()
 
 class Pixel:
     def __init__(self, idx, attached_field):
@@ -95,15 +99,17 @@ class Pixel:
 
     def paint(self, color=COLORS["WHITE"]):
         self.attached_field[self.index] = color
+
+    def show(self):
         self.attached_field.show()
 
 
 if __name__ == '__main__':
     my_playfield = Field(boards=2, size_board_x=8, size_board_y=8)
 
-    my_playfield.paint((123,231,132))
-    time.sleep(0.5)
-
+    # my_playfield.paint((123,231,132))
+    # time.sleep(0.5)
+    #
     my_playfield[0][1][2].paint(COLORS["WHITE"])
     time.sleep(0.5)
 
