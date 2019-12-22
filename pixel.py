@@ -111,6 +111,7 @@ if __name__ == '__main__':
     # time.sleep(0.5)
     #
     my_playfield[0][1][2].paint(COLORS["WHITE"])
+    my_playfield.show()
     time.sleep(0.5)
 
     my_playfield[1].paint(COLORS["GREEN"])
