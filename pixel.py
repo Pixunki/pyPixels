@@ -43,6 +43,7 @@ class Field:
 class Board:
     def __init__(self, size_x, size_y, start_index, attached_field):
         self.start_index = start_index
+        self.attached_field = attached_field
         self.rows = []
         for downwards in range(size_y):
             new_row = Row(
