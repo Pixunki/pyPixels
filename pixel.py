@@ -38,6 +38,9 @@ class Field:
                 for pixel in row:
                     pixel.paint(color)
 
+    def __setitem__(self, idx, val):
+        self.neofield[idx] = val
+
     def show(self):
         self.neofield.show()
 
