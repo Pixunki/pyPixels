@@ -72,6 +72,9 @@ class Board:
     def show(self):
         self.attached_field.show()
 
+    def __getitem__(self, idx):
+        return self.rows[idx]
+
 class Row:
     def __init__(self, size_x, start_index, attached_field):
         self.start_index = start_index
@@ -93,6 +96,10 @@ class Row:
             pixel.paint(color)
     def show(self):
         self.attached_field.show()
+
+
+    def __getitem__(self, idx):
+        return self.pixels[idx]
 
 class Pixel:
     def __init__(self, idx, attached_field):
