@@ -66,9 +66,8 @@ class Board:
 
     def paint(self, color=COLORS["WHITE"]):
         for row in self.rows:
-            for row in board:
-                for pixel in row:
-                    pixel.paint(color)
+            for pixel in row:
+                pixel.paint(color)
     def show(self):
         self.attached_field.show()
 
