@@ -41,6 +41,8 @@ class Field:
 
     def __setitem__(self, idx, val):
         self.neofield[idx] = val
+    def __getitem__(self, idx):
+        return self.neofield[idx]
 
     def show(self):
         self.neofield.show()
