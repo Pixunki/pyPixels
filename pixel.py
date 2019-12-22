@@ -3,11 +3,11 @@ import board
 import neopixel
 
 COLORS = {
-    "BLACK" = (0,0,0),
-    "WHITE" = (255,255,255),
-    "BLUE" = (255,255,0)
-    "RED" = (0,255,255)
-    "GREEN" = (255,0,255)
+    "BLACK": (0,0,0),
+    "WHITE": (255,255,255),
+    "BLUE": (255,255,0),
+    "RED": (0,255,255),
+    "GREEN": (255,0,255)
 }
 GPIO_PIN = board.D18
 COLOR_SETTING = neopixel.GRB
