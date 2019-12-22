@@ -5,12 +5,12 @@ import neopixel
 COLORS = {
     "BLACK": (0,0,0),
     "WHITE": (255,255,255),
-    "BLUE": (255,255,0),
-    "RED": (0,255,255),
-    "GREEN": (255,0,255)
+    "BLUE": (0,0,255),
+    "RED": (255,0,0),
+    "GREEN": (0,255,0)
 }
 GPIO_PIN = board.D18
-COLOR_SETTING = neopixel.RGB
+COLOR_SETTING = neopixel.GRB
 
 class Field:
     def __init__(self, boards, size_board_x=8, size_board_y=8):
