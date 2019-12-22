@@ -4,7 +4,10 @@ import neopixel
 
 COLORS = {
     "BLACK" = (0,0,0),
-    "WHITE" = (255,255,255)
+    "WHITE" = (255,255,255),
+    "BLUE" = (255,255,0)
+    "RED" = (0,255,255)
+    "GREEN" = (255,0,255)
 }
 GPIO_PIN = board.D18
 COLOR_SETTING = neopixel.GRB
@@ -86,5 +89,17 @@ class Pixel:
         self.attached_field[self.idx] = color
         self.attached_field.show()
 
-my_playfield = Field(boards=2, size_board_x=8, size_board_y=8)
-my_playfield[]
+
+if __name__ == '__main__':
+    my_playfield = Field(boards=2, size_board_x=8, size_board_y=8)
+
+    my_playfield.paint((123,231,132))
+    time.sleep(0.5)
+
+    my_playfield[0][1][2].paint(COLORS["WHITE"])
+    time.sleep(0.5)
+
+    my_playfield[1].paint(COLORS["GREEN"])
+    time.sleep(0.5)
+
+    my_playfield[0][3].paint(COLOR["BLUE"])
