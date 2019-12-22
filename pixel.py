@@ -20,7 +20,7 @@ class Field:
                             boards*size_board_x*size_board_y,
                             pixel_order=COLOR_SETTING
                         )
-        for board_n in range(boards_y):
+        for board_n in range(boards):
             new_board = Board(
                             size_board_x,
                             size_board_y,
