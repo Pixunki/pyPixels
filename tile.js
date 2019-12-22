@@ -1,13 +1,18 @@
-const tile_size=20, border_size=0;
+const tile_size=20, border_size=5;
 const green=[90,200,90], purple=[150,50,200], gray=[100,100,100], poop=[128,0,0], red=[255,0,0], orange=[255,165,0], yellow=[255,255,0];
 
 
 class Tile {
-	constructor(pos_x, pos_y, color="checkers"){
+	constructor(board_n, pos_x, pos_y, color="checkers"){
 		this.coords = [pos_x, pos_y]
-		this.x = [this.x1, this.x2] = [tile_size*pos_x, tile_size*pos_x+tile_size];
+		this.b = board_n;
+		this.x = [this.x1, this.x2] =
+			[
+				this.b*8*tile_size + tile_size*pos_x + border_size*this.b,
+				this.b*8*tile_size + tile_size*pos_x+tile_size + border_size*this.b
+			];
 		this.y = [this.y1, this.y2] = [tile_size*pos_y, tile_size*pos_y+tile_size];
-		this.border_size = border_size;
+		//this.border_size = border_size;
 
 		if (color == "checkers"){
 			if ((pos_x+pos_y)%2 == 0){
@@ -27,7 +32,7 @@ class Tile {
 	draw(){
 		noStroke();
 		fill(this.color);
-		this.rect = rect(this.x1+border_size, this.y1+border_size, (this.x2-this.x1)-2*border_size, (this.y2-this.y1)-2*border_size);
+		this.rect = rect(this.x1, this.y1, (this.x2-this.x1), (this.y2-this.y1));
 	}
 
 	mouseClicked(){
