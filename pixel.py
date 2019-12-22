@@ -28,8 +28,9 @@ class Field:
                             start_index = board_n*size_board_x*size_board_y
                         )
             self.boards.append(new_board)
-    def __iter__(self, idx):
-        yield self.boards[idx]
+    def __iter__(self):
+        for board in self.boards:
+            yield board
 
     def paint(self, color=COLORS["WHITE"]):
         for board in self.boards:
@@ -53,8 +54,9 @@ class Board:
                     )
             self.rows.append(new_row)
 
-    def __iter__(self, idx):
-        yield self.rows[idx]
+    def __iter__(self):
+        for row in self.rows:
+            yield row
 
     def paint(self, color=COLORS["WHITE"]):
         for row in self.rows:
@@ -74,8 +76,9 @@ class Row:
                         )
             self.pixels.append(new_pixel)
 
-    def __iter__(self, idx):
-        yield self.pixels[idx]
+    def __iter__(self):
+        for pixel in self.pixels:
+            yield pixel
 
     def paint(self, color=COLORS["WHITE"]):
         for pixel in self.pixels:
