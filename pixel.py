@@ -21,6 +21,7 @@ class Field:
                             pixel_order = COLOR_SETTING,
                             brightness = 0.04
                         )
+
         for board_n in range(boards):
             new_board = Board(
                             size_board_x,
@@ -118,13 +119,20 @@ if __name__ == '__main__':
     # my_playfield.paint((123,231,132))
     # time.sleep(0.5)
     #
-    my_playfield[0][1][2].paint(COLORS["WHITE"])
-    my_playfield.show()
-    time.sleep(0.5)
+    # my_playfield[0][1][2].paint(COLORS["WHITE"])
+    # my_playfield.show()
+    # time.sleep(0.5)
+    #
+    # my_playfield[1].paint(COLORS["GREEN"])
+    # my_playfield.show()
+    # time.sleep(0.5)
+    #
+    # my_playfield[0][3].paint(COLORS["BLUE"])
+    # my_playfield.show()
 
-    my_playfield[1].paint(COLORS["GREEN"])
-    my_playfield.show()
-    time.sleep(0.5)
-
-    my_playfield[0][3].paint(COLORS["BLUE"])
-    my_playfield.show()
+    for row in range(8):
+        for board in my_playfield:
+            for pixel in board[row]:
+                pixel.paint(COLORS["GREEN"])
+                pixel.show()
+                time.sleep(0.3)
