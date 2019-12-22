@@ -40,5 +40,5 @@ function clickListener(){
     }
 	index_y = floor(mouseY/tile_size);
 
-	map[b][index_x][index_y].newColor(orange);
+	map[b][index_x][index_y].mouseClicked();
 }
