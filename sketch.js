@@ -43,12 +43,21 @@ function clickListener(){
 	map[b][index_x][index_y].mouseClicked();
 }
 
+function update_brush(){
+    let r = document.getElementsByName('rgb_red')[0].value;
+    let g = document.getElementsByName('rgb_green')[0].value;
+    let b = document.getElementsByName('rgb_blue')[0].value;
+    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 || !r || !g || !b) {
+        brush_color = [0, 0, 0];
+    } else {
+        brush_color = [r, g, b]
+    }
+    console.log("new color!", brush_color)
+}
+
 function keyPressed(){
     if (key == "c") {
-        let r = document.getElementsByName('rgb_red')[0].value;
-        let g = document.getElementsByName('rgb_green')[0].value;
-        let b = document.getElementsByName('rgb_blue')[0].value;
-		brush_color = [r, g, b];
+        update_brush()
         console.log("new color!", brush_color)
 	}
 }
