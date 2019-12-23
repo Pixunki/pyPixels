@@ -1,5 +1,6 @@
 let map;
 const board_rows=8, board_cols=8, boards=2;
+let last_mouse = [-1,-1];
 
 function setup(){
 	my_area = createCanvas(
@@ -45,8 +46,11 @@ function clickListener(drag){
     }
 	index_y = floor(mouseY/tile_size);
 
-	map[b][index_x][index_y].mouseClicked(drag);
-
+    console.log(index_x, index_y, last_mouse)
+    if (index_x != last_mouse[0] || index_y != last_mouse[1]){
+        last_mouse = [index_x, index_y]
+        map[b][index_x][index_y].mouseClicked(drag);
+    }
 }
 
 function update_brush(){
