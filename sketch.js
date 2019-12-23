@@ -42,3 +42,13 @@ function clickListener(){
 
 	map[b][index_x][index_y].mouseClicked();
 }
+
+function keyPressed(){
+    if (key == "c") {
+        let r = document.getElementsByName('rgb_red')[0].value;
+        let g = document.getElementsByName('rgb_green')[0].value;
+        let b = document.getElementsByName('rgb_blue')[0].value;
+		brush_color = [r, g, b];
+        console.log("new color!", brush_color)
+	}
+}

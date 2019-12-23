@@ -1,6 +1,6 @@
 const tile_size=20, border_size=5;
 const green=[90,200,90], purple=[150,50,200], gray=[100,100,100], poop=[128,0,0], red=[255,0,0], orange=[255,165,0], yellow=[255,255,0];
-
+let brush_color=[0,0,0];
 
 class Tile {
 	constructor(board_n, pos_x, pos_y, color="checkers"){
@@ -38,7 +38,7 @@ class Tile {
 
 	mouseClicked(){
 		if (this.color == this.default_color) {
-			this.newColor(orange);
+			this.newColor(brush_color);
 		} else {
 			this.newColor(this.default_color);
 		}
