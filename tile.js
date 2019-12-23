@@ -39,7 +39,9 @@ class Tile {
 	mouseClicked(drag){
 		if (drag) {
 			if (this.color != this.default_color) {
-				return
+				if (this.color != brush_color){
+					return
+				}
 			}
 		}
 		if (this.color == this.default_color) {
