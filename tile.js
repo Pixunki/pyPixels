@@ -36,7 +36,12 @@ class Tile {
 		this.rect = rect(this.x1, this.y1, (this.x2-this.x1), (this.y2-this.y1));
 	}
 
-	mouseClicked(){
+	mouseClicked(drag){
+		if (drag) {
+			if (this.color != this.default_color) {
+				return
+			}
+		}
 		if (this.color == this.default_color) {
 			this.newColor(brush_color);
 		} else {

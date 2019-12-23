@@ -5,7 +5,7 @@ function setup(){
 	my_area = createCanvas(
                 boards*board_cols*tile_size+border_size,
                 board_rows*tile_size);
-	my_area.mousePressed(clickListener);
+	my_area.mousePressed(clickListener,drag=false);
 
 	background(gray);
 	map = new Array(boards);
@@ -18,6 +18,7 @@ function setup(){
     	}
     }
 	draw();
+    update_brush();
 }
 
 function draw() {
@@ -30,7 +31,11 @@ function draw() {
     }
 }
 
-function clickListener(){
+function mouseDragged(){
+	clickListener(drag=true);
+}
+
+function clickListener(drag){
 	let estimateX, estimateY;
     let b = 0;
 	index_x = floor((mouseX-b*border_size)/tile_size);
@@ -40,7 +45,8 @@ function clickListener(){
     }
 	index_y = floor(mouseY/tile_size);
 
-	map[b][index_x][index_y].mouseClicked();
+	map[b][index_x][index_y].mouseClicked(drag);
+
 }
 
 function update_brush(){
