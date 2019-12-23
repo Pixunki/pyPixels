@@ -1,6 +1,7 @@
 let map;
 const board_rows=8, board_cols=8, boards=2;
-let last_mouse = [-1,-1];
+let last_mouse = [-1,-1, null];
+let mouse_pos = [null, null, null]
 
 function setup(){
 	my_area = createCanvas(
@@ -32,12 +33,8 @@ function draw() {
     }
 }
 
-function mouseDragged(){
-	clickListener(drag=true);
-}
-
-function clickListener(drag){
-	let estimateX, estimateY;
+function update_indexes(){
+    /*let estimateX, estimateY;*/
     let b = 0;
 	index_x = floor((mouseX-b*border_size)/tile_size);
     while (index_x >= board_cols) {
@@ -45,12 +42,35 @@ function clickListener(drag){
         index_x = floor((mouseX-b*border_size)/tile_size) - b*board_cols;
     }
 	index_y = floor(mouseY/tile_size);
+    mouse_pos = [b, index_x, index_y]
+}
 
-    console.log(index_x, index_y, last_mouse)
+function mouseDragged(){
+    update_indexes()
+    let b = mouse_pos[0]
+    let index_x = mouse_pos[1]
+    let index_y = mouse_pos[2]
+
+    mouse_tile = map[b][index_x][index_y];
     if (index_x != last_mouse[0] || index_y != last_mouse[1]){
-        last_mouse = [index_x, index_y]
-        map[b][index_x][index_y].mouseClicked(drag);
+        if (mouse_tile.color == mouse_tile.default_color && !last_mouse[2] ||
+            mouse_tile.color != mouse_tile.default_color && last_mouse[2]) {
+            map[b][index_x][index_y].mouseClicked();
+        }
     }
+    console.log(last_mouse)
+}
+
+function clickListener(drag){
+    update_indexes()
+    let b = mouse_pos[0]
+    let index_x = mouse_pos[1]
+    let index_y = mouse_pos[2]
+
+    mouse_tile = map[b][index_x][index_y];
+    mouse_tile.mouseClicked();
+    let deleting = (mouse_tile.color == mouse_tile.default_color)
+    last_mouse = [index_x, index_y, deleting]
 }
 
 function update_brush(){

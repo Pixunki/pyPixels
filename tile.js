@@ -36,19 +36,21 @@ class Tile {
 		this.rect = rect(this.x1, this.y1, (this.x2-this.x1), (this.y2-this.y1));
 	}
 
-	mouseClicked(drag){
-		if (drag) {
-			if (this.color != this.default_color) {
-				if (this.color != brush_color){
-					return
-				}
-			}
-		}
+	mouseClicked(draw_or_delete){
 		if (this.color == this.default_color) {
 			this.newColor(brush_color);
 		} else {
 			this.newColor(this.default_color);
 		}
 		console.log("http://pixel.rogerio.no/pypixels/GET?board="+this.b+"&row="+this.coords[1]+"&col="+this.coords[0]+"&0xFFFF00");
+		return "draw"
+	}
+
+	mouseDragged(){
+		if (this.color != this.default_color) {
+			if (this.color != brush_color){
+				return "delete"
+			}
+		}
 	}
 }
