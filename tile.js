@@ -37,10 +37,10 @@ class Tile {
 	}
 
 	mouseClicked(){
-		if (this.newColor === undefined {
+		if (this.color == this.default_color) {
 			this.newColor(orange);
 		} else {
-			this.newColor(this.default_color)
+			this.newColor(this.default_color);
 		}
 		console.log("http://pixel.rogerio.no/pypixels/GET?board="+this.b+"&row="+this.coords[1]+"&col="+this.coords[0]+"&0xFFFF00");
 	}
