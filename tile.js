@@ -23,6 +23,7 @@ class Tile {
 		} else {
 			this.color = color;
 		}
+		this.default_color = this.color;
 	}
 
 	newColor(color){
@@ -36,7 +37,11 @@ class Tile {
 	}
 
 	mouseClicked(){
-		this.newColor(orange);
+		if (this.newColor === undefined {
+			this.newColor(orange);
+		} else {
+			this.newColor(this.default_color)
+		}
 		console.log("http://pixel.rogerio.no/pypixels/GET?board="+this.b+"&row="+this.coords[1]+"&col="+this.coords[0]+"&0xFFFF00");
 	}
 }
