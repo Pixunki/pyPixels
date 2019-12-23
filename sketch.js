@@ -44,13 +44,21 @@ function clickListener(){
 }
 
 function update_brush(){
-    let r = document.getElementsByName('rgb_red')[0].value;
-    let g = document.getElementsByName('rgb_green')[0].value;
-    let b = document.getElementsByName('rgb_blue')[0].value;
-    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255 || !r || !g || !b) {
+    let hex_rgb = document.getElementsByName('rgb')[0].value;
+    let nohex_rgb = hex_rgb.slice(1);
+    let hex_r = nohex_rgb.slice(0,2);
+    let hex_g = nohex_rgb.slice(2,4);
+    let hex_b = nohex_rgb.slice(4);
+
+    let r = parseInt(hex_r, 16);
+    let g = parseInt(hex_g, 16);
+    let b = parseInt(hex_b, 16);
+    console.log(hex_r, hex_g, hex_b)
+    console.log(r, g, b)
+    if (r < 0 || r > 255 || g < 0 || g > 255 || b < 0 || b > 255) {
         brush_color = [0, 0, 0];
     } else {
-        brush_color = [r, g, b]
+        brush_color = [r, g, b];
     }
     console.log("new color!", brush_color)
 }
