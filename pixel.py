@@ -51,6 +51,9 @@ class Field:
     def get_cols(self):
         return [board.get_cols() for board in self]
 
+    def __len__(self):
+        return len(self.boards)
+
 class Board:
     def __init__(self, size_x, size_y, start_index, attached_field):
         self.start_index = start_index
@@ -90,6 +93,9 @@ class Board:
             new_col.clear()
         return columns
 
+    def __len__(self):
+        return len(self.rows)
+
 class Row:
     def __init__(self, size_x, start_index, attached_field):
         self.start_index = start_index
@@ -115,6 +121,9 @@ class Row:
 
     def __getitem__(self, idx):
         return self.pixels[idx]
+
+    def __len__(self):
+        return len(self.pixels)
 
 class Pixel:
     def __init__(self, idx, attached_field):
