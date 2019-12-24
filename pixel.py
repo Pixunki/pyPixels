@@ -98,7 +98,7 @@ class Board:
     def __len__(self):
         return len(self.rows)
 
-    @staticfunction
+    @staticmethod
     def paint_col(column, colour):
         for pix in column:
             pix.paint(colour)
