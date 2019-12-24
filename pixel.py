@@ -85,7 +85,7 @@ class Board:
         for column in range(n_cols):
             new_col = []
             for row in self:
-                new_col.append(row[column]):
+                new_col.append(row[column])
             columns.append(new_col)
             new_col.clear()
         return columns
