@@ -11,6 +11,6 @@ if __name__ == '__main__':
     my_cols[2].paint(pixel.COLORS["BLUE"])
     my_cols[3].paint(pixel.COLORS["WHITE"])
     my_cols[4].paint(pixel.COLORS["BLACK"])
-    my_cols[5].paint(pixel.COLORS["REG"])
+    my_cols[5].paint(pixel.COLORS["RED"])
     my_cols[6].paint(pixel.COLORS["GREEN"])
     my_cols[7].paint(pixel.COLORS["GREEN"])
