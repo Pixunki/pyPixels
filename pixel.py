@@ -73,7 +73,7 @@ class Board:
             yield row
 
     def paint(self, color=COLORS["WHITE"]):
-        for row in self.rows:
+        for row in self:
             for pixel in row:
                 pixel.paint(color)
     def show(self):
