@@ -4,7 +4,7 @@ import sleep
 
 if __name__ == '__main__':
     my_playfield = pixel.Field(boards=2, size_board_x=8, size_board_y=8)
-    my_cols = my_playfield[0].get_columns()  # we only use the first board
+    my_cols = my_playfield[0].get_cols()  # we only use the first board
 
     my_cols[0].paint(pixel.COLORS["GREEN"])
     my_cols[1].paint(pixel.COLORS["RED"])

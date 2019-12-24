@@ -78,7 +78,7 @@ class Board:
     def __getitem__(self, idx):
         return self.rows[idx]
 
-    def get_columns(self):
+    def get_cols(self):
         columns = []
         n_cols = len(self[0])
 
