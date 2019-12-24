@@ -9,11 +9,12 @@ COLORS = {
     "RED": (255,0,0),
     "GREEN": (0,255,0)
 }
-GPIO_PIN = board.D18
+GPIO_PIN = board.D12
 COLOR_SETTING = neopixel.GRB
 
 class Field:
-    def __init__(self, boards, size_board_x=8, size_board_y=8):
+    def __init__(self, boards, size_board_x=8, size_board_y=8, \
+                pin=GPIO_PIN, setting=COLOR_SETTING):
         self.boards = []
         self.neofield = neopixel.NeoPixel(
                             GPIO_PIN,
@@ -95,7 +96,7 @@ class Board:
 
     def __len__(self):
         return len(self.rows)
-        
+
 
 class Row:
     def __init__(self, size_x, start_index, attached_field):

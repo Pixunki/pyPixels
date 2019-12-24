@@ -6,7 +6,7 @@ if __name__ == '__main__':
     my_cols = my_playfield[0].get_cols()  # we only use the first board
 
     [pixel.paint(pixel.COLORS["GREEN"]) for pixel in my_cols[0]]
-    [pixel.paint(pixel.COLORS["RED"]) for pixel in my_cols[1]]
+    [pixel.paint(pixel.COLORS["RED"]) for pixel in my_cols[1]] 
     [pixel.paint(pixel.COLORS["BLUE"]) for pixel in my_cols[2]]
     [pixel.paint(pixel.COLORS["WHITE"]) for pixel in my_cols[3]]
     [pixel.paint(pixel.COLORS["BLACK"]) for pixel in my_cols[4]]
