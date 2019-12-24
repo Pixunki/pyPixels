@@ -84,14 +84,15 @@ class Board:
 
     def get_cols(self):
         columns = []
-        n_cols = len(self[0])
+        n_cols = len(self.rows[0])
 
         for column in range(n_cols):
             new_col = []
-            for row in self:
+            for row in self.rows:
                 new_col.append(row[column])
             columns.append(new_col)
-            new_col.clear()
+            #new_col.clear()
+            print(new_col)
         return columns
 
     def __len__(self):
