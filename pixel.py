@@ -48,6 +48,9 @@ class Field:
     def show(self):
         self.neofield.show()
 
+    def get_cols(self):
+        return [board.get_cols() for board in self]
+
 class Board:
     def __init__(self, size_x, size_y, start_index, attached_field):
         self.start_index = start_index
