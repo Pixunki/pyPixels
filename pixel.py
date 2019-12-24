@@ -75,6 +75,18 @@ class Board:
     def __getitem__(self, idx):
         return self.rows[idx]
 
+    def get_columns(self):
+        columns = []
+        n_cols = len(self[0])
+
+        for column in range(n_cols):
+            new_col = []
+            for row in self:
+                new_col.append(row[column]):
+            columns.append(new_col)
+            new_col.clear()
+        return columns
+
 class Row:
     def __init__(self, size_x, start_index, attached_field):
         self.start_index = start_index
