@@ -1,9 +1,8 @@
 import pixel
 import time
-import sleep
 
 if __name__ == '__main__':
-    my_playfield = pixel.Field(boards=2, size_board_x=8, size_board_y=8)
+    my_playfield = pixel.Field(boards=1, size_board_x=8, size_board_y=5)
     my_cols = my_playfield[0].get_cols()  # we only use the first board
 
     my_cols[0].paint(pixel.COLORS["GREEN"])
