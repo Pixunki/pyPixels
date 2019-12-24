@@ -98,6 +98,11 @@ class Board:
     def __len__(self):
         return len(self.rows)
 
+    @staticfunction
+    def paint_col(column, colour):
+        for pix in column:
+            pix.paint(colour)
+
 
 class Row:
     def __init__(self, size_x, start_index, attached_field):
