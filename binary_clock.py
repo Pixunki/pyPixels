@@ -7,13 +7,13 @@ if __name__ == '__main__':
 
     print(my_cols)
     print([pixel for pixel in my_cols])
-    [pixel.paint(pixelexio.COLORS["GREEN"]) for pixelexio in my_cols[0]]
-    [pixel.paint(pixelexio.COLORS["RED"]) for pixelexio in my_cols[1]]
-    [pixel.paint(pixelexio.COLORS["BLUE"]) for pixelexio in my_cols[2]]
-    [pixel.paint(pixelexio.COLORS["WHITE"]) for pixelexio in my_cols[3]]
-    [pixel.paint(pixelexio.COLORS["BLACK"]) for pixelexio in my_cols[4]]
-    [pixel.paint(pixelexio.COLORS["RED"]) for pixelexio in my_cols[5]]
-    [pixel.paint(pixelexio.COLORS["GREEN"]) for pixelexio in my_cols[6]]
-    [pixel.paint(pixelexio.COLORS["GREEN"]) for pixelexio in my_cols[7]]
+    [pixelexio.paint(pixel.COLORS["GREEN"]) for pixelexio in my_cols[0]]
+    [pixelexio.paint(pixel.COLORS["RED"]) for pixelexio in my_cols[1]]
+    [pixelexio.paint(pixel.COLORS["BLUE"]) for pixelexio in my_cols[2]]
+    [pixelexio.paint(pixel.COLORS["WHITE"]) for pixelexio in my_cols[3]]
+    [pixelexio.paint(pixel.COLORS["BLACK"]) for pixelexio in my_cols[4]]
+    [pixelexio.paint(pixel.COLORS["RED"]) for pixelexio in my_cols[5]]
+    [pixelexio.paint(pixel.COLORS["GREEN"]) for pixelexio in my_cols[6]]
+    [pixelexio.paint(pixel.COLORS["GREEN"]) for pixelexio in my_cols[7]]
 
     time.sleep(10)
