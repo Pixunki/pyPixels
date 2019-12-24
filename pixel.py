@@ -95,6 +95,7 @@ class Board:
 
     def __len__(self):
         return len(self.rows)
+        
 
 class Row:
     def __init__(self, size_x, start_index, attached_field):
