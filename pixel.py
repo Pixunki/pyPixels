@@ -112,11 +112,11 @@ class Row:
             self.pixels.append(new_pixel)
 
     def __iter__(self):
-        for pixel in self.pixels:
+        for pixel in self:
             yield pixel
 
     def paint(self, color=COLORS["WHITE"]):
-        for pixel in self.pixels:
+        for pixel in self:
             pixel.paint(color)
     def show(self):
         self.attached_field.show()
