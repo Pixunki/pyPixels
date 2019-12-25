@@ -5,6 +5,7 @@ from datetime import datetime
 
 RED = CLR["RED"]
 BLACK = CLR["BLACK"]
+BLUE = CLR["BLUE"]
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
@@ -12,12 +13,15 @@ def get_binary_digits(decimal_n, digits=5):
 def split_two(unit):
     return int(unit[0]), int(unit[1])
 
-def bin_to_led(num, leds, colour=RED):
+def bin_to_led(num, leds, colour=RED, max=0):
     for led in range(len(leds)):
+        if led > max and led != 0:
+            led.paint(BLACK)
+
         if num[led]=="1":
             leds[led].paint(RED)
         else:
-            leds[led].paint(BLACK)
+            leds[led].paint(BLUE)
 
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)
@@ -32,15 +36,15 @@ if __name__ == '__main__':
         hr, min, sec = split_two(hour), split_two(minute), split_two(second)
 
         # hour
-        bin_to_led(get_binary_digits(hr[0]), hr_big)
-        bin_to_led(get_binary_digits(hr[1]), hr_smol)
+        bin_to_led(get_binary_digits(hr[0]), hr_big, max=1)
+        bin_to_led(get_binary_digits(hr[1]), hr_smol, max=3)
 
         # minute
-        bin_to_led(get_binary_digits(min[0]), min_big)
-        bin_to_led(get_binary_digits(min[1]), min_smol)
+        bin_to_led(get_binary_digits(min[0]), min_big, max=2)
+        bin_to_led(get_binary_digits(min[1]), min_smol, max=1)
 
         # second
-        bin_to_led(get_binary_digits(sec[0]), sec_big)
-        bin_to_led(get_binary_digits(sec[1]), sec_smol)
+        bin_to_led(get_binary_digits(sec[0]), sec_big, max=2)
+        bin_to_led(get_binary_digits(sec[1]), sec_smol, max=1)
 
         time.sleep(1)
