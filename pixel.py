@@ -91,8 +91,6 @@ class Board:
             for row in self.rows:
                 new_col.append(row[column])
             columns.append(new_col)
-            #new_col.clear()
-            print(new_col)
         return columns
 
     def __len__(self):

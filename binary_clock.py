@@ -25,5 +25,3 @@ if __name__ == '__main__':
         print(hour, minute, second)
 
         time.sleep(1)
-
-    time.sleep(10)
