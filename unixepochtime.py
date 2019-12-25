@@ -32,11 +32,12 @@ if __name__ == '__main__':
         times = [now_bin[start:end] if start>0 else now_bin[:end] for start, end in ASCII_TUPLES]
 
         for time_byte in times:
-            print(time_byte, end="")
-            if time_byte=="111111":
+            time_byte = time_byte.zfill(6)
+            time_byte = "01"+time_byte
+            if time_byte=="01111111":
                 print("€", end="")
             else:
-                print(chr(int("01"+time_byte, 2)), end="")
+                print(chr(int(time_byte, 2)), end="")
         print()
 
         time.sleep(1)
