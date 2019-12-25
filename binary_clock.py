@@ -21,6 +21,6 @@ if __name__ == '__main__':
     px.Row.paint(sec_smol, RED)
 
     while True:
-        print(datetime.now())
+        print(datetime.now().strftime("%H %M %S"))
 
     time.sleep(10)
