@@ -7,7 +7,7 @@ RED = CLR["RED"]
 BLACK = CLR["BLACK"]
 
 def get_binary_digits(decimal_n, digits=5):
-    return float(decimal_n, f"0{digits}b")
+    return format(decimal_n, f"0{digits}b")
 
 def split_two(unit):
     return int(unit[0]), int(unit[1])
