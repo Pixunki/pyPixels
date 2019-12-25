@@ -28,6 +28,6 @@ if __name__ == '__main__':
         print(now_bin)
         print(leds)
         # hour
-        bin_to_led(now_bin, my_playfield, max)
+        bin_to_led(now_bin, my_playfield)
 
         time.sleep(1)
