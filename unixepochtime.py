@@ -26,7 +26,7 @@ if __name__ == '__main__':
 
     while True:
         now = datetime.now().strftime("%s")
-        now_bin = get_binary_digits(int(now), digits=32)
+        now_bin = get_binary_digits(int(now), digits=31)
         print(now_bin)
         # hour
         bin_to_led(now_bin, blob_pixels)
