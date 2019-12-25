@@ -2,7 +2,7 @@ import pixel as px
 import time
 from datetime import datetime
 
-RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["BLUE"]
+RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
