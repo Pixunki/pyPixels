@@ -24,8 +24,7 @@ if __name__ == '__main__':
 
     while True:
         now = datetime.now().strftime("%s")
-        now_bin = get_binary_digits(now, digits=32)
-        n_bins = len(now)
+        now_bin = get_binary_digits(int(now), digits=32)
 
         # hour
         bin_to_led(now_bin, my_playfield, max=32)
