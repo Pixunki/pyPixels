@@ -3,8 +3,8 @@ import time
 from datetime import datetime
 
 RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
-PIX_COUNT = 40
-ASCII_TUPLES = [(start-7, start) for start in range(40,0,-7)]
+PIX_COUNT = 32
+ASCII_TUPLES = [(start-7, start) for start in range(PIX_COUNT,0,-7)]
 ASCII_TUPLES.reverse()
 
 def get_binary_digits(decimal_n, digits=5):
@@ -32,7 +32,7 @@ if __name__ == '__main__':
         times = [now_bin[start:end] if start>0 else now_bin[:end] for start, end in ASCII_TUPLES]
 
         for time_byte in times:
-            print(chr(int("0"+time_byte, 2)))
+            print(chr(int("0"+time_byte, 2)), end="")
         print()
 
         time.sleep(1)
