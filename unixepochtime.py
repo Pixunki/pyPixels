@@ -4,7 +4,7 @@ from datetime import datetime
 
 RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
 PIX_COUNT = 40
-ASCII_TUPLES = reversed([(start-7, start) for start in range(40,0,-7)])
+ASCII_TUPLES = [(start-7, start) for start in range(40,0,-7)]
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
