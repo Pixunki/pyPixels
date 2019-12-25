@@ -12,7 +12,7 @@ def split_two(unit):
 
 def bin_to_led(num, leds, colour=RED, max=0):
     for led in range(len(leds)):
-        if len(leds)-max > led or max==0:
+        if len(leds)-max > led and max!=0:
             leds[led].paint(BLACK)
         elif num[led]=="1":
             leds[led].paint(RED)
@@ -28,6 +28,6 @@ if __name__ == '__main__':
         print(now_bin)
 
         # hour
-        bin_to_led(now_bin, my_playfield)
+        bin_to_led(now_bin, my_playfield, max)
 
         time.sleep(1)
