@@ -30,6 +30,6 @@ if __name__ == '__main__':
         for unit in [hour_big, hour_smol,
                     minute_big, minute_smol,
                     second_big, second_smol]:
-            print(bin(unit))
+            print(format(unit, "05b"))
 
         time.sleep(1)
