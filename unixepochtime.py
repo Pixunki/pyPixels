@@ -11,8 +11,7 @@ def split_two(unit):
     return int(unit[0]), int(unit[1])
 
 def bin_to_led(num, leds, colour=RED, max=0):
-    for led in range(len(leds)-1):
-        print(led, num)
+    for led in range(len(leds)):
         if len(leds)-max > led and max!=0:
             leds[led].paint(BLACK)
         elif num[led]=="1":
@@ -26,7 +25,7 @@ if __name__ == '__main__':
 
     while True:
         now = datetime.now().strftime("%s")
-        now_bin = get_binary_digits(int(now), digits=31)
+        now_bin = get_binary_digits(int(now), digits=32)
         print(now_bin)
         # hour
         bin_to_led(now_bin, blob_pixels)
