@@ -57,8 +57,17 @@ class Field:
     def get_cols(self):
         return [board.get_cols() for board in self]
 
+    def get_all(self):
+        all_pixels = []
+        for board in self:
+            for row in board:
+                for pixel in row:
+                    all_pixels.append(pixel)
+        return all_pixels
+
     def __len__(self):
         return len(self.boards)
+
 
 class Board:
     def __init__(self, size_x, size_y, start_index, attached_field):
