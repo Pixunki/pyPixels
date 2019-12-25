@@ -8,14 +8,14 @@ if __name__ == '__main__':
 
     print(my_cols)
     print([pixel for pixel in my_cols])
-    px.Board.paint(my_cols[0], CLR["GREEN"])
-    px.Board.paint(my_cols[1], CLR["BLUE"])
-    px.Board.paint(my_cols[2], CLR["BLACK"])
-    px.Board.paint(my_cols[3], CLR["RED"])
-    px.Board.paint(my_cols[4], CLR["WHITE"])
-    px.Board.paint(my_cols[5], CLR["BLACK"])
-    px.Board.paint(my_cols[6], CLR["GREEN"])
-    px.Board.paint(my_cols[7], CLR["RED"])
+    px.Row.paint(my_cols[0], CLR["GREEN"])
+    px.Row.paint(my_cols[1], CLR["BLUE"])
+    px.Row.paint(my_cols[2], CLR["BLACK"])
+    px.Row.paint(my_cols[3], CLR["RED"])
+    px.Row.paint(my_cols[4], CLR["WHITE"])
+    px.Row.paint(my_cols[5], CLR["BLACK"])
+    px.Row.paint(my_cols[6], CLR["GREEN"])
+    px.Row.paint(my_cols[7], CLR["RED"])
 
 
     time.sleep(10)
