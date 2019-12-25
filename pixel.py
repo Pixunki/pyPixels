@@ -12,7 +12,7 @@ COLORS = {
     "DARKBLUE": (0,0,63),
     "DARKRED": (63,0,0),
     "DARKGREEN": (0,63,0),
-    "DARKGRAY": (7,7,7)
+    "DARKGRAY": (15,15,15)
 }
 GPIO_PIN = board.D12
 COLOR_SETTING = neopixel.GRB
