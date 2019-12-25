@@ -27,7 +27,9 @@ if __name__ == '__main__':
         minute_big, minute_smol = int(minute[0]), int(minute[1])
         second_big, second_smol = int(second[0]), int(second[1])
 
-        for unit in [hour_big, hour_smol, minute_big]:
+        for unit in [hour_big, hour_smol,
+                    minute_big, minute_smol,
+                    second_big, second_smol]:
             print(bin(unit))
 
         time.sleep(1)
