@@ -22,6 +22,7 @@ def bin_to_led(num, leds, colour=RED, max=0):
 
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)[0]
+    blob_pixels = my_playfield.get_all()
 
     while True:
         now = datetime.now().strftime("%s")
