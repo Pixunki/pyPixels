@@ -3,6 +3,7 @@ import time
 from datetime import datetime
 
 RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
+PIX_COUNT = 31
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
@@ -11,7 +12,7 @@ def split_two(unit):
     return int(unit[0]), int(unit[1])
 
 def bin_to_led(num, leds, colour=RED, max=0):
-    for led in range(min(len(leds), 32)):
+    for led in range(min(len(leds), PIX_COUNT)):
         if num[led]=="1":
             leds[led].paint(RED)
         else:
@@ -23,7 +24,7 @@ if __name__ == '__main__':
 
     while True:
         now = datetime.now().strftime("%s")
-        now_bin = get_binary_digits(int(now), digits=31)
+        now_bin = get_binary_digits(int(now), digits=PIX_COUNT)
         # hour
         bin_to_led(now_bin, blob_pixels)
 
