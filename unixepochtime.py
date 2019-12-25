@@ -13,9 +13,7 @@ def split_two(unit):
 def bin_to_led(num, leds, colour=RED, max=0):
     print(now)
     for led in range(min(len(leds), 32)):
-        if len(leds)-max > led and max!=0:
-            leds[led].paint(BLACK)
-        elif num[led]=="1":
+        if num[led]=="1":
             leds[led].paint(RED)
         else:
             leds[led].paint(BLUE)
