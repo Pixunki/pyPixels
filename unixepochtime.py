@@ -28,8 +28,8 @@ if __name__ == '__main__':
         # hour
         bin_to_led(now_bin, blob_pixels)
         for start, end in [(0, 8), (8, 16), (16, 24), (24, 32), (32, 40)]:
-            print(now_bin[start:end], end=": ")
-            print(chr(int(str(now_bin)[start:end], 2)))
+            print("0"+now_bin[start+1:end], end=": ")
+            print(chr(int("0"+str(now_bin)[start+1:end], 2)))
         print()
 
         time.sleep(1)
