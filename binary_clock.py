@@ -19,7 +19,7 @@ def bin_to_led(num, leds, colour=RED, max=0):
             leds[led].paint(RED)
         else:
             leds[led].paint(BLUE)
-    for led in range(len(max)):
+    for led in range(max):
         leds[led].paint(BLACK)
 
 if __name__ == '__main__':
