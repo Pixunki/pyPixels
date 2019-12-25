@@ -23,9 +23,9 @@ if __name__ == '__main__':
     while True:
         hour, minute, second = datetime.now().strftime("%H %M %S").split()
         print(hour, minute, second)
-        hour_big, hour_smol = hour[0], hour[1]
-        minute_big, minute_smol = minute[0], minute[1]
-        second_big, second_smol = second[0], second[1]
+        hour_big, hour_smol = int(hour[0]), int(hour[1])
+        minute_big, minute_smol = int(minute[0]), int(minute[1])
+        second_big, second_smol = int(second[0]), int(second[1])
 
         for unit in [hour_big, hour_smol, minute_big]:
             print(bin(unit))
