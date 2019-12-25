@@ -3,7 +3,7 @@ import time
 from datetime import datetime
 
 RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
-PIX_COUNT = 32
+PIX_COUNT = 40
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
@@ -28,7 +28,7 @@ if __name__ == '__main__':
         # hour
         bin_to_led(now_bin, blob_pixels)
         for start, end in [(0, 8), (8, 16), (16, 24), (24, 32)]:
-            print(chr(int(str(now_bin)[start:end], 2)),end="")
+            print(chr(int(str(now_bin)[start:end], 2)),end=" ")
         print()
 
         time.sleep(1)
