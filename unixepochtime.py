@@ -4,6 +4,7 @@ from datetime import datetime
 
 RED, BLACK, BLUE = px.COLORS["RED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
 PIX_COUNT = 40
+ASCII_TUPLES = [(start-7, start) for start in range(40,0,-7)]
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
@@ -27,9 +28,11 @@ if __name__ == '__main__':
         now_bin = get_binary_digits(int(now), digits=PIX_COUNT)
         # hour
         bin_to_led(now_bin, blob_pixels)
-        for start, end in [(0, 8), (8, 16), (16, 24), (24, 32), (32, 40)]:
-            print("0"+now_bin[start+1:end], end=": ")
-            print(chr(int("0"+str(now_bin)[start+1:end], 2)))
+        times = [now_bin[start:end] if start>0 else now_bin[:end] for start, end in ASCII_TUPLES]
+
+        for time in times:
+            print(times)
+            print(chr(int("0"+time, 2)))
         print()
 
         time.sleep(1)
