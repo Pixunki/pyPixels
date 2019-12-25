@@ -2,7 +2,7 @@ import pixel as px
 import time
 from datetime import datetime
 
-RED, BLACK, BLUE = px.COLORS["DARKRED"], px.COLORS["BLACK"], px.COLORS["DARKBLUE"]
+RED, BLACK, DARKGRAY = px.COLORS["DARKRED"], px.COLORS["BLACK"], px.COLORS["DARKGRAY"]
 
 def get_binary_digits(decimal_n, digits=5):
     return format(decimal_n, f"0{digits}b")
@@ -17,7 +17,7 @@ def bin_to_led(num, leds, colour=RED, max=0):
         elif num[led]=="1":
             leds[led].paint(RED)
         else:
-            leds[led].paint(BLUE)
+            leds[led].paint(DARKGRAY)
 
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)
