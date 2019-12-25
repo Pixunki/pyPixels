@@ -37,15 +37,15 @@ if __name__ == '__main__':
         hr, min, sec = split_two(hour), split_two(minute), split_two(second)
 
         # hour
-        bin_to_led(get_binary_digits(hr[0]), hr_big, max=1)
-        bin_to_led(get_binary_digits(hr[1]), hr_smol, max=3)
+        bin_to_led(get_binary_digits(hr[0]), hr_big, max=2)
+        bin_to_led(get_binary_digits(hr[1]), hr_smol, max=4)
 
         # minute
-        bin_to_led(get_binary_digits(min[0]), min_big, max=2)
-        bin_to_led(get_binary_digits(min[1]), min_smol, max=1)
+        bin_to_led(get_binary_digits(min[0]), min_big, max=3)
+        bin_to_led(get_binary_digits(min[1]), min_smol, max=4)
 
         # second
-        bin_to_led(get_binary_digits(sec[0]), sec_big, max=2)
-        bin_to_led(get_binary_digits(sec[1]), sec_smol, max=1)
+        bin_to_led(get_binary_digits(sec[0]), sec_big, max=3)
+        bin_to_led(get_binary_digits(sec[1]), sec_smol, max=4)
 
         time.sleep(1)
