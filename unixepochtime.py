@@ -26,7 +26,7 @@ if __name__ == '__main__':
         now = datetime.now().strftime("%s")
         now_bin = get_binary_digits(int(now), digits=32)
         print(now_bin)
-
+        print(leds)
         # hour
         bin_to_led(now_bin, my_playfield, max)
 
