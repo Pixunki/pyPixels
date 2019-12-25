@@ -19,8 +19,6 @@ def bin_to_led(num, leds, colour=RED, max=0):
         else:
             leds[led].paint(BLUE)
 
-    for led in range(len(leds)-max):
-
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)
 
