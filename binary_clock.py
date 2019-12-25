@@ -4,6 +4,20 @@ import time
 from datetime import datetime
 
 RED = CLR["RED"]
+BLACK = CLR["BLACK"]
+
+def get_binary_digits(decimal_n, digits=5):
+    return float(decimal_n, f"0{digits}b")
+
+def split_two(unit):
+    return int(unit[0]), int(unit[1])
+
+def bin_to_led(num, leds, colour=RED):
+    for led in range(len(leds)):
+        if num[led]=="1":
+            leds[led] = BLACK
+        else:
+            leds[led] = RED
 
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)
@@ -22,14 +36,18 @@ if __name__ == '__main__':
 
     while True:
         hour, minute, second = datetime.now().strftime("%H %M %S").split()
-        print(hour, minute, second)
-        hour_big, hour_smol = int(hour[0]), int(hour[1])
-        minute_big, minute_smol = int(minute[0]), int(minute[1])
-        second_big, second_smol = int(second[0]), int(second[1])
+        hr, min, sec = split_two(hour), split_two(minute), split_two(second)
 
-        for unit in [hour_big, hour_smol,
-                    minute_big, minute_smol,
-                    second_big, second_smol]:
-            print(format(unit, "05b"))
+        # hour
+        bin_to_led(get_binary_digits(hr[0]), hr_big)
+        bin_to_led(get_binary_digits(hr[1]), hr_smol)
+
+        # minute
+        bin_to_led(get_binary_digits(min[0]), min_big)
+        bin_to_led(get_binary_digits(min[1]), min_smol)
+
+        # second
+        bin_to_led(get_binary_digits(sec[0]), sec_big)
+        bin_to_led(get_binary_digits(sec[1]), sec_smol)
 
         time.sleep(1)
