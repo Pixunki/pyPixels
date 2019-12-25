@@ -15,9 +15,9 @@ def split_two(unit):
 def bin_to_led(num, leds, colour=RED):
     for led in range(len(leds)):
         if num[led]=="1":
-            leds[led].paint(BLACK)
-        else:
             leds[led].paint(RED)
+        else:
+            leds[led].paint(BLACK)
 
 if __name__ == '__main__':
     my_playfield = px.Field(boards=1, size_board_x=8, size_board_y=5)
