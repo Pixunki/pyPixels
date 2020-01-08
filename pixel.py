@@ -14,7 +14,7 @@ COLORS = {
     "DARKGREEN": (0,63,0),
     "DARKGRAY": (28,28,28)
 }
-GPIO_PIN = board.D12
+GPIO_PIN = board.D18
 COLOR_SETTING = neopixel.GRB
 
 class Field:
@@ -25,7 +25,7 @@ class Field:
                             GPIO_PIN,
                             boards*size_board_x*size_board_y,
                             pixel_order = COLOR_SETTING,
-                            brightness = 0.04
+                            brightness = 0.60
                         )
 
         for board_n in range(boards):
